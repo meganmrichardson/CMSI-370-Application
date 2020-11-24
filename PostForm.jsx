@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Form, Button, Card } from "react-bootstrap";
 
 export default function PostForm(props) {
@@ -17,7 +17,7 @@ export default function PostForm(props) {
         type="checkbox"
         label="Add Post"
         checked={checked}
-        onChange={() => setChecked(prevState => !prevState)}
+        onChange={() => setChecked((prevState) => !prevState)}
       />
       {checked && (
         <>
@@ -26,7 +26,7 @@ export default function PostForm(props) {
               type="input"
               placeholder="Title"
               value={title}
-              onChange={event => setTitle(event.target.value)}
+              onChange={(event) => setTitle(event.target.value)}
             />
           </Form.Group>
           <Form.Group>
@@ -35,7 +35,7 @@ export default function PostForm(props) {
               as="textarea"
               rows={10}
               value={body}
-              onChange={event => setBody(event.target.value)}
+              onChange={(event) => setBody(event.target.value)}
             />
           </Form.Group>
           <Button variant="primary" type="submit">
