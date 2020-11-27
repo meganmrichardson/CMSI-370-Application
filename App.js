@@ -6,19 +6,23 @@ import {
   Text,
   Image,
   View,
-  Button,
+  Button
 } from "react-native";
-import logo from "./assets/logo.png";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { Container, Row, Col } from "react-bootstrap";
+import { Form, Container, Row, Col } from "react-bootstrap";
 import PostList from "./PostList";
 import PostForm from "./PostForm";
+import PostDesign from "./PostDesign";
 import { SearchBar } from "react-native-elements";
 import { TextInput } from "react-native-gesture-handler";
+import { ToggleButton } from "react-toggle-button";
 import "./App.css";
+import { redBright } from "colorette";
 
 const Stack = createStackNavigator();
+var mainColor = "#74c69d";
+var textColor = "#081c15";
 
 function App() {
   return (
@@ -46,17 +50,17 @@ function App() {
   );
 }
 
-const styles = StyleSheet.create({
-  textStyle: {
-    fontSize: 20,
-    fontFamily: "Trebuchet MS",
-  },
-  otherStyle: {
-    position: "absolute",
-    justifyContent: "center",
-    background: "green",
-  },
-});
+// const styles = StyleSheet.create({
+//   textStyle: {
+//     fontSize: 20,
+//     fontFamily: "Trebuchet MS"
+//   },
+//   otherStyle: {
+//     position: "absolute",
+//     justifyContent: "center",
+//     background: "green"
+//   }
+// });
 
 const LoginScreen = ({ navigation }) => {
   const [username, setUsername] = useState("Default User");
@@ -66,7 +70,7 @@ const LoginScreen = ({ navigation }) => {
         style={{ height: 40, padding: 20 }}
         borderColor="gray"
         placeholder="Username"
-        onChangeText={(username) => setUsername(username)}
+        onChangeText={username => setUsername(username)}
       />
       <TextInput
         style={{ height: 40, padding: 20 }}
@@ -74,6 +78,7 @@ const LoginScreen = ({ navigation }) => {
         placeholder="Password"
       />
       <Button
+        color="#76AF57"
         title="Login"
         onPress={() => navigation.navigate("Home", { user: username })}
       />
@@ -85,22 +90,51 @@ const HomeScreen = ({ navigation, route }) => {
   return (
     <View>
       <Button
+        color="#90C573"
         title="My Profile"
         onPress={() =>
           navigation.navigate("Profile", { name: route.params.user })
         }
       />
       <Button
+        color="#76AF57"
         title="Create Post"
         onPress={() => navigation.navigate("Create")}
       />
-      <Button title="Search" onPress={() => navigation.navigate("Search")} />
+      <Button
+        color="#609B3F"
+        title="Search"
+        onPress={() => navigation.navigate("Search")}
+      />
+      <PostDesign />
     </View>
   );
 };
 
 const ProfileScreen = ({ navigation, route }) => {
-  return <Text>This is {route.params.name}'s profile</Text>;
+  const [body, setBody] = useState("");
+
+  return (
+    <View>
+      <Text style={{ color: "black" }}>
+        This is {route.params.name}'s profile
+      </Text>
+      <Text>Bio:</Text>
+      <Form.Control
+        as="textarea"
+        rows={10}
+        value={body}
+        onChange={event => setBody(event.target.value)}
+      />
+      <Text>Join Communities:</Text>
+      <Form.Check type="checkbox" label="LGTBQ+" />
+      <Form.Check type="checkbox" label="Native American" />
+      <Form.Check type="checkbox" label="Person with a Disability" />
+      <Form.Check type="checkbox" label="African American" />
+      <Form.Check type="checkbox" label="Asian American" />
+      <Form.Check type="checkbox" label="Hispanic" />
+    </View>
+  );
 };
 
 const PostScreen = ({ navigation }) => {
@@ -123,13 +157,14 @@ const PostScreen = ({ navigation }) => {
 
 const SearchScreen = ({ navigation }) => {
   return (
-    <SearchBar
-      round
-      searchIcon={{ size: 24 }}
-      // onChangeText={(text) => this.SearchFilterFunction(text)}
-      // onClear={(text) => this.SearchFilterFunction("")}
-      placeholder="Type Here..."
-    />
+    <Search />
+    // <SearchBar
+    //   round
+    //   searchIcon={{ size: 24 }}
+    //   // onChangeText={(text) => this.SearchFilterFunction(text)}
+    //   // onClear={(text) => this.SearchFilterFunction("")}
+    //   placeholder="Type Here..."
+    // />
   );
 };
 
