@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
   ScrollView,
   StyleSheet,
@@ -7,6 +7,7 @@ import {
   View,
   Button
 } from "react-native";
+import { Container } from "react-bootstrap";
 import "./App.css";
 
 var mainColor = "#74c69d";
@@ -66,26 +67,70 @@ const styles = StyleSheet.create({
     float: "right",
     overflow: "hidden"
   },
+  bio: {
+    color: textColor,
+    padding: 30,
+    fontSize: 14,
+    fontFamily: "Avenir-Light"
+  },
   postImage: {
-    // height: 35,
-    // width: 35,
-    margin: 5,
-
+    width: "80%",
+    float: "left",
+    paddingLeft: 80,
+    paddingRight: 80,
+    marginTop: -25,
     overflow: "hidden"
   }
 });
 
-export default function PostDesign() {
+export default function UserProfile() {
   return (
-    <View>
+    <Container>
+      <View style={styles.container1}>
+        <Image
+          style={styles.profPic}
+          source={"https://i.imgur.com/oywNGQ3.jpg"}
+        />
+        <Text style={styles.nameHeader}>Josh Seaman</Text>
+        <Text style={styles.communitiesHeader}> Communities: 4 </Text>
+
+        <div id="socials">
+          <img
+            style={{ paddingTop: 10, paddingRight: 15 }}
+            src="https://img.icons8.com/color/50/000000/discord-logo.png"
+          />
+          <img
+            style={{ paddingTop: 10, paddingRight: 15 }}
+            src="https://img.icons8.com/color/50/000000/instagram-new.png"
+          />
+          <img
+            style={{ paddingTop: 10, paddingRight: 15 }}
+            src="https://img.icons8.com/color/50/000000/facebook-new.png"
+          />
+          <img
+            style={{ paddingTop: 10, paddingRight: 15 }}
+            src="https://img.icons8.com/color/50/000000/tiktok.png"
+          />
+          <img
+            style={{ paddingTop: 10, paddingRight: 15 }}
+            src="https://img.icons8.com/color/50/000000/connection-status-off--v1.png"
+          />
+          <br />
+          <br />
+          <Text style={styles.bio}> So excited to show everyone gather!</Text>
+          <br />
+          <br />
+        </div>
+      </View>
       <div
+        id="post1"
         style={{
           borderWidth: 1,
           borderStyle: "solid",
           borderRadius: 10,
           borderColor: mainColor,
           alignSelf: "center",
-          width: "70%",
+          width: "90%",
           marginTop: 10,
           marginBottom: 10,
           marginLeft: 20,
@@ -106,8 +151,7 @@ export default function PostDesign() {
                   float: "left",
                   fontFamily: "Avenir-Light",
                   color: textColor,
-                  fontSize: 20,
-                  marginTop: 2
+                  fontSize: 20
                 }}
               >
                 Josh Seaman
@@ -120,7 +164,7 @@ export default function PostDesign() {
                   fontFamily: "Avenir-Light",
                   fontSize: 14,
                   color: mainColor,
-                  marginTop: 9
+                  marginTop: 25
                 }}
               >
                 &nbsp;&nbsp;3 days ago
@@ -168,7 +212,7 @@ export default function PostDesign() {
           borderRadius: 10,
           borderColor: mainColor,
           alignSelf: "center",
-          width: "70%",
+          width: "90%",
           marginTop: 10,
           marginBottom: 10,
           marginLeft: 20,
@@ -189,8 +233,7 @@ export default function PostDesign() {
                   float: "left",
                   fontFamily: "Avenir-Light",
                   color: textColor,
-                  fontSize: 20,
-                  marginTop: 2
+                  fontSize: 20
                 }}
               >
                 Josh Seaman
@@ -203,7 +246,7 @@ export default function PostDesign() {
                   fontFamily: "Avenir-Light",
                   fontSize: 14,
                   color: mainColor,
-                  marginTop: 9
+                  marginTop: 25
                 }}
               >
                 &nbsp;&nbsp;11/01/2020
@@ -220,12 +263,18 @@ export default function PostDesign() {
           </tr>
           <tr>
             <tc>
+              <Image
+                style={styles.postImage}
+                source={
+                  "http://www.jennybeaumont.com/wp-content/uploads/2015/03/placeholder.gif"
+                }
+              />
               <img
                 src={
                   "http://www.jennybeaumont.com/wp-content/uploads/2015/03/placeholder.gif"
                 }
                 style={{
-                  width: "90%",
+                  width: "80%",
                   float: "left",
                   paddingLeft: 80,
                   paddingRight: 80,
@@ -251,6 +300,6 @@ export default function PostDesign() {
           </tr>
         </table>
       </div>
-    </View>
+    </Container>
   );
 }

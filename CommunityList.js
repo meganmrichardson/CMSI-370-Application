@@ -1,6 +1,6 @@
 import React from "react";
 
-communityList = [
+const communityList = [
   "LGBTQ+",
   "Native American",
   "Person with a Disability",

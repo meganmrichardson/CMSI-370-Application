@@ -11,14 +11,15 @@ import {
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { Form, Container, Row, Col } from "react-bootstrap";
-import PostList from "./PostList";
+import UserProfile from "./UserProfile";
 import PostForm from "./PostForm";
 import PostDesign from "./PostDesign";
+import Search from "./Search.js";
 import { SearchBar } from "react-native-elements";
 import { TextInput } from "react-native-gesture-handler";
 import { ToggleButton } from "react-toggle-button";
-import "./App.css";
 import { redBright } from "colorette";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const Stack = createStackNavigator();
 var mainColor = "#74c69d";
@@ -114,27 +115,34 @@ const HomeScreen = ({ navigation, route }) => {
 const ProfileScreen = ({ navigation, route }) => {
   const [body, setBody] = useState("");
 
-  return (
-    <View>
-      <Text style={{ color: "black" }}>
-        This is {route.params.name}'s profile
-      </Text>
-      <Text>Bio:</Text>
-      <Form.Control
-        as="textarea"
-        rows={10}
-        value={body}
-        onChange={event => setBody(event.target.value)}
-      />
-      <Text>Join Communities:</Text>
-      <Form.Check type="checkbox" label="LGTBQ+" />
-      <Form.Check type="checkbox" label="Native American" />
-      <Form.Check type="checkbox" label="Person with a Disability" />
-      <Form.Check type="checkbox" label="African American" />
-      <Form.Check type="checkbox" label="Asian American" />
-      <Form.Check type="checkbox" label="Hispanic" />
-    </View>
-  );
+  // return (
+  //   <View>
+  //     <Text style={{ color: "black" }}>
+  //       This is {route.params.name}'s profile
+  //     </Text>
+  //     <Text>Bio:</Text>
+  //     <Form.Control
+  //       as="textarea"
+  //       rows={10}
+  //       value={body}
+  //       onChange={event => setBody(event.target.value)}
+  //     />
+  //     <form action="upload.php" method="post" enctype="multipart/form-data">
+  //       Select Image:
+  //       <input type="file" name="fileToUpload" id="fileToUpload" />
+  //       <input type="submit" value="Upload Image" name="submit" />
+  //     </form>
+  //     <Text>Join Communities:</Text>
+  //     <Form.Check type="checkbox" label="LGTBQ+" />
+  //     <Form.Check type="checkbox" label="Native American" />
+  //     <Form.Check type="checkbox" label="Person with a Disability" />
+  //     <Form.Check type="checkbox" label="African American" />
+  //     <Form.Check type="checkbox" label="Asian American" />
+  //     <Form.Check type="checkbox" label="Hispanic" />
+  //   </View>
+  // );
+
+  return <UserProfile />;
 };
 
 const PostScreen = ({ navigation }) => {
@@ -142,13 +150,9 @@ const PostScreen = ({ navigation }) => {
     <ScrollView>
       <View>
         <Container>
-          <Row className="justify-content-md-center">
-            <Col xs lg="2">
-              <Text>
-                <PostForm />
-              </Text>
-            </Col>
-          </Row>
+          <Text>
+            <PostForm />
+          </Text>
         </Container>
       </View>
     </ScrollView>

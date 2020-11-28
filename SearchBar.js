@@ -3,10 +3,13 @@ import React from "react";
 const SearchBar = ({ keyword, setKeyword }) => {
   const BarStyling = {
     width: "20rem",
-    background: "#F2F1F9",
+    background: "lightgreen",
     border: "none",
     padding: "0.5rem"
   };
+  <form
+  <button type = "submit"><i class= "fa fa-search"></i></button>
+  </form>
   return (
     <input
       style={BarStyling}
