@@ -5,9 +5,10 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { Form, Container, Row, Col } from "react-bootstrap";
 import UserProfile from "./UserProfile";
+import PersonalProfile from "./PersonalProfile";
 import PostForm from "./PostForm";
 import PostDesign from "./PostDesign";
-import Search from "./Search.js";
+import Search from "./Search";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { TextInput } from "react-native-gesture-handler";
 
@@ -56,7 +57,12 @@ const LoginScreen = ({ navigation }) => {
   const [username, setUsername] = useState("Default User");
   return (
     <View
-      style={{ justifyContent: "center", flexDirection: "column", flex: 1 }}
+      style={{
+        justifyContent: "center",
+        flexDirection: "column",
+        flex: 1,
+        backgroundImage: "linear-gradient(80deg, #ffffff, #d7f5e6, #ffffff)"
+      }}
     >
       <View style={{ flex: 1 }} />
       <View style={{ justifyContent: "center", flexDirection: "row", flex: 1 }}>
@@ -175,7 +181,7 @@ const ProfileScreen = ({ navigation, route }) => {
   //   </View>
   // );
 
-  return <UserProfile />;
+  return <PersonalProfile />;
 };
 
 const PostScreen = ({ navigation }) => {

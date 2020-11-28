@@ -22,21 +22,13 @@ const styles = StyleSheet.create({
     height: "100%",
     textAlign: "center"
   },
-  communitiesIcons: {
+  settingsWrapper: {
     alignItems: "center",
     alignContent: "center",
     height: "100%",
     padding: 5,
     flexDirection: "row",
     justifyContent: "center"
-  },
-  moreCommunities: {
-    height: 40,
-    width: 40,
-    margin: 5,
-    borderRadius: 180,
-    float: "right",
-    overflow: "hidden"
   },
   nameHeader: {
     color: mainColor,
@@ -78,7 +70,7 @@ const styles = StyleSheet.create({
   }
 });
 
-export default function UserProfile() {
+export default function PersonalProfile() {
   return (
     <Container>
       <View>
@@ -88,40 +80,16 @@ export default function UserProfile() {
             source={"https://i.imgur.com/oywNGQ3.jpg"}
           />
           <Text style={styles.nameHeader}>Josh Seaman</Text>
-          <Text style={styles.communitiesHeader}> Communities: 4 </Text>
+          <Text style={styles.communitiesHeader}>Manage Communities</Text>
         </View>
 
-        <View style={styles.communitiesIcons}>
-          <Image
-            style={styles.communityPic}
-            source={
-              "https://i.ebayimg.com/images/g/5HoAAOSweRVe1nuY/s-l400.jpg"
-            }
-          />
-          <Image
-            style={styles.communityPic}
-            source={
-              "https://whwest.org.au/wp-content/uploads/2018/12/rainbow_flag.png"
-            }
-          />
-          <Image
-            style={styles.communityPic}
-            source={
-              "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Disability_symbols.svg/1024px-Disability_symbols.svg.png"
-            }
-          />
-          <Image
-            style={styles.communityPic}
-            source={
-              "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Transgender_Pride_flag.svg/1920px-Transgender_Pride_flag.svg.png"
-            }
-          />
-          <Image
-            style={styles.moreCommunities}
-            source={
-              "https://img.icons8.com/color/50/000000/connection-status-off--v1.png"
-            }
-          />
+        <View style={styles.settingsWrapper}>
+          <Button
+            title="Manage Settings"
+            style={{ backgroundColor: "#74c69d" }}
+          >
+            Settings
+          </Button>
         </View>
 
         <Text style={styles.bio}> So excited to show everyone gather!</Text>
