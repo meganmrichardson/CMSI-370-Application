@@ -1,13 +1,6 @@
 // import { StatusBar } from "expo-status-bar";
-import React, { useState, useEffect } from "react";
-import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  Image,
-  View,
-  Button
-} from "react-native";
+import React, { useState } from "react";
+import { ScrollView, Text, Image, View, Button } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { Form, Container, Row, Col } from "react-bootstrap";
@@ -15,16 +8,13 @@ import UserProfile from "./UserProfile";
 import PostForm from "./PostForm";
 import PostDesign from "./PostDesign";
 import Search from "./Search.js";
-import { SearchBar } from "react-native-elements";
-import { TextInput } from "react-native-gesture-handler";
-import { ToggleButton } from "react-toggle-button";
-import { redBright } from "colorette";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { TextInput } from "react-native-gesture-handler";
 
 const Stack = createStackNavigator();
 var mainColor = "#74c69d";
-var secondaryColor = "#52a184";
-var textColor = "#081c15";
+// var secondaryColor = "#52a184";
+// var textColor = "#081c15";
 
 function App() {
   return (
@@ -59,8 +49,6 @@ function App() {
         </Stack.Navigator>
       }
     </NavigationContainer>
-
-    // Post List
   );
 }
 
@@ -205,16 +193,7 @@ const PostScreen = ({ navigation }) => {
 };
 
 const SearchScreen = ({ navigation }) => {
-  return (
-    <Search />
-    // <SearchBar
-    //   round
-    //   searchIcon={{ size: 24 }}
-    //   // onChangeText={(text) => this.SearchFilterFunction(text)}
-    //   // onClear={(text) => this.SearchFilterFunction("")}
-    //   placeholder="Type Here..."
-    // />
-  );
+  return <Search />;
 };
 
 export default App;

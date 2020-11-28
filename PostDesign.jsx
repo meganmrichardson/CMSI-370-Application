@@ -1,13 +1,5 @@
-import React, { useState, useEffect } from "react";
-import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  Image,
-  View,
-  Button
-} from "react-native";
-// import "./App.css";
+import React from "react";
+import { View, StyleSheet, Text, Image } from "react-native";
 
 var mainColor = "#74c69d";
 var textColor = "#081c15";
