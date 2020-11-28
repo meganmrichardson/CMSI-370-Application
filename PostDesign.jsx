@@ -7,7 +7,7 @@ import {
   View,
   Button
 } from "react-native";
-import "./App.css";
+// import "./App.css";
 
 var mainColor = "#74c69d";
 var textColor = "#081c15";

@@ -11,6 +11,9 @@ import {
 } from "react-bootstrap";
 import { Alert } from "react-native";
 
+var mainColor = "#74c69d";
+var secondaryColor = "#52a184";
+
 export default function PostForm(props) {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
@@ -50,8 +53,20 @@ export default function PostForm(props) {
           <input type="file" name="fileToUpload" id="fileToUpload" />
         </form>
 
-        <Dropdown style={{ marginTop: 10 }} onSelect={handleCommunity}>
-          <Dropdown.Toggle variant="success" id="dropdown-basic">
+        <Dropdown
+          style={{ marginTop: 10 }}
+          // color={secondaryColor}
+          onSelect={handleCommunity}
+        >
+          <Dropdown.Toggle
+            variant="success"
+            id="dropdown-basic"
+            style={{
+              backgroundColor: "white",
+              outline: "black",
+              color: "black"
+            }}
+          >
             {community}
           </Dropdown.Toggle>
 
@@ -76,7 +91,12 @@ export default function PostForm(props) {
             </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
-        <Button variant="primary" type="submit" style={{ marginTop: 10 }}>
+        <Button
+          // variant="primary"
+          // backgroundColor={mainColor}
+          type="submit"
+          style={{ marginTop: 10, backgroundColor: "#74c69d" }}
+        >
           Submit
         </Button>
       </>

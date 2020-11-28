@@ -23,6 +23,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const Stack = createStackNavigator();
 var mainColor = "#74c69d";
+var secondaryColor = "#52a184";
 var textColor = "#081c15";
 
 function App() {
@@ -33,16 +34,28 @@ function App() {
           <Stack.Screen
             name="Login"
             component={LoginScreen}
-            options={{ title: "Welcome to gather!" }}
+            options={{ title: "gather" }}
           />
           <Stack.Screen
             name="Home"
             component={HomeScreen}
             options={{ title: "gather" }}
           />
-          <Stack.Screen name="Profile" component={ProfileScreen} />
-          <Stack.Screen name="Create" component={PostScreen} />
-          <Stack.Screen name="Search" component={SearchScreen} />
+          <Stack.Screen
+            name="Profile"
+            component={ProfileScreen}
+            options={{ title: "gather" }}
+          />
+          <Stack.Screen
+            name="Create"
+            component={PostScreen}
+            options={{ title: "gather" }}
+          />
+          <Stack.Screen
+            name="Search"
+            component={SearchScreen}
+            options={{ title: "gather" }}
+          />
         </Stack.Navigator>
       }
     </NavigationContainer>
@@ -51,38 +64,56 @@ function App() {
   );
 }
 
-// const styles = StyleSheet.create({
-//   textStyle: {
-//     fontSize: 20,
-//     fontFamily: "Trebuchet MS"
-//   },
-//   otherStyle: {
-//     position: "absolute",
-//     justifyContent: "center",
-//     background: "green"
-//   }
-// });
-
 const LoginScreen = ({ navigation }) => {
   const [username, setUsername] = useState("Default User");
   return (
-    <View>
-      <TextInput
-        style={{ height: 40, padding: 20 }}
-        borderColor="gray"
-        placeholder="Username"
-        onChangeText={username => setUsername(username)}
-      />
-      <TextInput
-        style={{ height: 40, padding: 20 }}
-        borderColor="gray"
-        placeholder="Password"
-      />
-      <Button
-        color="#76AF57"
-        title="Login"
-        onPress={() => navigation.navigate("Home", { user: username })}
-      />
+    <View
+      style={{ justifyContent: "center", flexDirection: "column", flex: 1 }}
+    >
+      <View style={{ flex: 1 }} />
+      <View style={{ justifyContent: "center", flexDirection: "row", flex: 1 }}>
+        <View style={{ flex: 1 }} />
+        <View style={{ flex: 1, textAlign: "center" }}>
+          <Text
+            style={{
+              marginBottom: 15,
+              fontSize: 30,
+              color: "#52a184"
+            }}
+            justifyContent="center"
+          >
+            Welcome to gather!
+          </Text>
+          <TextInput
+            style={{
+              height: 60,
+              padding: 20,
+              marginBottom: 10,
+              backgroundColor: "white"
+            }}
+            borderColor="gray"
+            placeholder="Username"
+            onChangeText={username => setUsername(username)}
+          />
+          <TextInput
+            style={{
+              height: 60,
+              padding: 20,
+              marginBottom: 10,
+              backgroundColor: "white"
+            }}
+            borderColor="gray"
+            placeholder="Password"
+          />
+          <Button
+            color={mainColor}
+            title="Login"
+            onPress={() => navigation.navigate("Home", { user: username })}
+          />
+        </View>
+        <View style={{ flex: 1 }} />
+      </View>
+      <View style={{ flex: 1 }} />
     </View>
   );
 };
@@ -90,23 +121,37 @@ const LoginScreen = ({ navigation }) => {
 const HomeScreen = ({ navigation, route }) => {
   return (
     <View>
-      <Button
-        color="#90C573"
-        title="My Profile"
-        onPress={() =>
-          navigation.navigate("Profile", { name: route.params.user })
-        }
-      />
-      <Button
-        color="#76AF57"
-        title="Create Post"
-        onPress={() => navigation.navigate("Create")}
-      />
-      <Button
-        color={mainColor}
-        title="Search"
-        onPress={() => navigation.navigate("Search")}
-      />
+      <View
+        style={{
+          flex: 1,
+          flexDirection: "row",
+          justifyContent: "center"
+        }}
+      >
+        <View style={{ flex: 1, padding: 5 }}>
+          <Button
+            color={mainColor}
+            title="My Profile"
+            onPress={() =>
+              navigation.navigate("Profile", { name: route.params.user })
+            }
+          />
+        </View>
+        <View style={{ flex: 1, padding: 5 }}>
+          <Button
+            color={mainColor}
+            title="Create Post"
+            onPress={() => navigation.navigate("Create")}
+          />
+        </View>
+        <View style={{ flex: 1, padding: 5 }}>
+          <Button
+            color={mainColor}
+            title="Search"
+            onPress={() => navigation.navigate("Search")}
+          />
+        </View>
+      </View>
       <PostDesign />
     </View>
   );

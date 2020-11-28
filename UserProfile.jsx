@@ -8,7 +8,7 @@ import {
   Button
 } from "react-native";
 import { Container } from "react-bootstrap";
-import "./App.css";
+// import "./App.css";
 
 var mainColor = "#74c69d";
 var textColor = "#081c15";
