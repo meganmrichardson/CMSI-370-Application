@@ -16,12 +16,12 @@ export default function PostForm(props) {
   const [body, setBody] = useState("");
   const [community, setCommunity] = useState("Choose Community");
 
+  const handleCommunity = e => {
+    setCommunity(e);
+  };
+
   function handleSubmit(event) {
     event.preventDefault();
-  }
-
-  function handleCommunity(event) {
-    setCommunity(event);
   }
 
   return (
@@ -50,28 +50,28 @@ export default function PostForm(props) {
           <input type="file" name="fileToUpload" id="fileToUpload" />
         </form>
 
-        <Dropdown style={{ marginTop: 10 }}>
+        <Dropdown style={{ marginTop: 10 }} onSelect={handleCommunity}>
           <Dropdown.Toggle variant="success" id="dropdown-basic">
             {community}
           </Dropdown.Toggle>
 
           <Dropdown.Menu>
-            <Dropdown.Item as="button" eventKey="lgtbq">
+            <Dropdown.Item as="button" eventKey="LGBTQ+">
               LGBTQ+
             </Dropdown.Item>
-            <Dropdown.Item as="button" eventKey="nativea">
+            <Dropdown.Item as="button" eventKey="Native American">
               Native American
             </Dropdown.Item>
-            <Dropdown.Item as="button" eventKey="disabled">
+            <Dropdown.Item as="button" eventKey="Person with a Disability">
               Person with a Disability
             </Dropdown.Item>
-            <Dropdown.Item as="button" eventKey="africana">
+            <Dropdown.Item as="button" eventKey="African American">
               African American
             </Dropdown.Item>
-            <Dropdown.Item as="button" eventKey="asiana">
+            <Dropdown.Item as="button" eventKey="Asian Pacific Islander">
               Asian Pacific Islander
             </Dropdown.Item>
-            <Dropdown.Item as="button" eventKey="hispanic">
+            <Dropdown.Item as="button" eventKey="Latino/a/x Chicano/a/x">
               Latino/a/x Chicano/a/x
             </Dropdown.Item>
           </Dropdown.Menu>

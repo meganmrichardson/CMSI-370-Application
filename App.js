@@ -103,7 +103,7 @@ const HomeScreen = ({ navigation, route }) => {
         onPress={() => navigation.navigate("Create")}
       />
       <Button
-        color="#609B3F"
+        color={mainColor}
         title="Search"
         onPress={() => navigation.navigate("Search")}
       />
