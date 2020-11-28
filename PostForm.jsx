@@ -30,7 +30,10 @@ export default function PostForm(props) {
   return (
     <Form onSubmit={handleSubmit}>
       <>
-        <Form.Group controlId="exampleForm.ControlInput1">
+        <Form.Group
+          style={{ marginTop: 15 }}
+          controlId="exampleForm.ControlInput1"
+        >
           <Form.Control
             type="email"
             placeholder="Title"

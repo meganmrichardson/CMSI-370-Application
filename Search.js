@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import SearchBar from "./SearchBar";
+import { Text, View } from "react-native";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const communityList = [
   "LGBTQ+",
   "Native American",
   "Person with a Disability",
   "African American",
-  "Asian American",
-  "Hispanic",
+  "Asian Pacific Islander",
+  "Latino/a/x Chicano/a/x",
   "Josh Seaman"
 ];
 
@@ -24,12 +26,18 @@ const Search = props => {
   };
 
   return (
-    <>
-      <h1>Search for Communities:</h1>
-      <SearchBar input={input} onChange={updateInput} />
-      <text>{filteredCommunityList}</text>
-      <text>{input}</text>
-    </>
+    <View style={{ justifyContent: "center", flexDirection: "row", flex: 1 }}>
+      <View style={{ flex: 1 }} />
+      <View style={{ flex: 2, textAlign: "center" }}>
+        <Text style={{ color: "#74c69d", fontSize: 20, margin: 20 }}>
+          Search for Communities & Users
+        </Text>
+        <SearchBar input={input} onChange={updateInput} />
+        <Text>{filteredCommunityList}</Text>
+        <Text>{input}</Text>
+      </View>
+      <View style={{ flex: 1 }} />
+    </View>
   );
 };
 
