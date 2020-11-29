@@ -13,8 +13,6 @@ const searchList = [
   "Josh Seaman"
 ];
 
-// rename to .jsx !!!!!
-
 // export default function Search(props) {
 //   const [searchInput, setSearchInput] = useState("");
 
@@ -191,6 +189,26 @@ const Search = props => {
             }
           />
           <Text style={styles.communitiesT}> Trans Pride!</Text>
+          <Text style={styles.communitiesSubT}> Apply | More Info </Text>
+        </View>
+        <View style={styles.commTitle}>
+          <Image
+            style={styles.commPic}
+            source={
+              "https://cdn4.iconfinder.com/data/icons/american-indian-tribe/500/American_Indian_tribe_native_clan_7-512.png"
+            }
+          />
+          <Text style={styles.communitiesT}> Native Americans</Text>
+          <Text style={styles.communitiesSubT}> Apply | More Info </Text>
+        </View>
+        <View style={styles.commTitle}>
+          <Image
+            style={styles.commPic}
+            source={
+              "https://media.istockphoto.com/vectors/rainbow-infinity-sign-vector-id599908116?k=6&m=599908116&s=170667a&w=0&h=d6FhnyBO6flX5xLRPNJn0Zc64hFdLFUsjkKlWT_r9q8="
+            }
+          />
+          <Text style={styles.communitiesT}> Neurodivergents Unite</Text>
           <Text style={styles.communitiesSubT}> Apply | More Info </Text>
         </View>
       </View>

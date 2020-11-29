@@ -67,6 +67,23 @@ const styles = StyleSheet.create({
     fontSize: 14,
     textAlign: "center",
     fontFamily: "Avenir-Light"
+  },
+  communitiesIcons: {
+    alignItems: "center",
+    alignContent: "center",
+    textAlign: "center",
+    height: "100%",
+    padding: 5,
+    flexDirection: "row",
+    justifyContent: "center"
+  },
+  settingsCommunities: {
+    height: 35,
+    width: 35,
+    margin: 5,
+    borderRadius: 180,
+    float: "right",
+    overflow: "hidden"
   }
 });
 
@@ -77,16 +94,50 @@ export default function PersonalProfile() {
         <View style={styles.profileHeader}>
           <Image
             style={styles.profPic}
-            source={"https://i.imgur.com/oywNGQ3.jpg"}
+            source={
+              "http://www.laaae.org/wp-content/uploads/2013/09/empty_profile_picture.gif"
+            }
           />
           <Text style={styles.nameHeader}>Josh Seaman</Text>
-          <Text style={styles.communitiesHeader}>Manage Communities</Text>
+          <Text style={styles.communitiesHeader}>Communities: 4</Text>
         </View>
-
+        <View style={styles.communitiesIcons}>
+          <Image
+            style={styles.communityPic}
+            source={
+              "https://i.ebayimg.com/images/g/5HoAAOSweRVe1nuY/s-l400.jpg"
+            }
+          />
+          <Image
+            style={styles.communityPic}
+            source={
+              "https://whwest.org.au/wp-content/uploads/2018/12/rainbow_flag.png"
+            }
+          />
+          <Image
+            style={styles.communityPic}
+            source={
+              "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Disability_symbols.svg/1024px-Disability_symbols.svg.png"
+            }
+          />
+          <Image
+            style={styles.communityPic}
+            source={
+              "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Transgender_Pride_flag.svg/1920px-Transgender_Pride_flag.svg.png"
+            }
+          />
+          <Image
+            style={styles.settingsCommunities}
+            source={
+              "https://img.icons8.com/material/48/000000/settings--v2.png"
+            }
+          />
+        </View>
         <View style={styles.settingsWrapper}>
           <Button
             title="Manage Settings"
-            style={{ backgroundColor: "#74c69d" }}
+            color="#74c69d"
+            // style={{ backgroundColor: "#74c69d" }}
           >
             Settings
           </Button>

@@ -1,7 +1,7 @@
 // import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
 import { ScrollView, Text, Image, View, Button } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, StackActions } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { Form, Container, Row, Col } from "react-bootstrap";
 import UserProfile from "./UserProfile";
@@ -30,7 +30,7 @@ function App() {
           <Stack.Screen
             name="Home"
             component={HomeScreen}
-            options={{ title: "gather" }}
+            options={{ title: "gather", headerLeft: "" }}
           />
           <Stack.Screen
             name="Profile"
@@ -45,6 +45,11 @@ function App() {
           <Stack.Screen
             name="Search"
             component={SearchScreen}
+            options={{ title: "gather" }}
+          />
+          <Stack.Screen
+            name="Todo"
+            component={TodoScreen}
             options={{ title: "gather" }}
           />
         </Stack.Navigator>
@@ -98,6 +103,7 @@ const LoginScreen = ({ navigation }) => {
             }}
             borderColor="gray"
             placeholder="Password"
+            secureTextEntry={true}
           />
           <Button
             color={mainColor}
@@ -152,54 +158,32 @@ const HomeScreen = ({ navigation, route }) => {
 };
 
 const ProfileScreen = ({ navigation, route }) => {
-  const [body, setBody] = useState("");
-
-  // return (
-  //   <View>
-  //     <Text style={{ color: "black" }}>
-  //       This is {route.params.name}'s profile
-  //     </Text>
-  //     <Text>Bio:</Text>
-  //     <Form.Control
-  //       as="textarea"
-  //       rows={10}
-  //       value={body}
-  //       onChange={event => setBody(event.target.value)}
-  //     />
-  //     <form action="upload.php" method="post" enctype="multipart/form-data">
-  //       Select Image:
-  //       <input type="file" name="fileToUpload" id="fileToUpload" />
-  //       <input type="submit" value="Upload Image" name="submit" />
-  //     </form>
-  //     <Text>Join Communities:</Text>
-  //     <Form.Check type="checkbox" label="LGTBQ+" />
-  //     <Form.Check type="checkbox" label="Native American" />
-  //     <Form.Check type="checkbox" label="Person with a Disability" />
-  //     <Form.Check type="checkbox" label="African American" />
-  //     <Form.Check type="checkbox" label="Asian American" />
-  //     <Form.Check type="checkbox" label="Hispanic" />
-  //   </View>
-  // );
-
   return <PersonalProfile />;
 };
 
 const PostScreen = ({ navigation }) => {
   return (
-    <ScrollView>
-      <View>
-        <Container>
-          <Text>
-            <PostForm />
-          </Text>
-        </Container>
+    <Container>
+      <Text>
+        <PostForm />
+      </Text>
+      <View style={{ padding: 15 }}>
+        <Button
+          color="#74c69d"
+          title="Submit"
+          onPress={() => navigation.navigate("Todo")}
+        />
       </View>
-    </ScrollView>
+    </Container>
   );
 };
 
 const SearchScreen = ({ navigation }) => {
   return <Search />;
+};
+
+const TodoScreen = ({ navigation }) => {
+  return <Text>Not Implemented yet!</Text>;
 };
 
 export default App;

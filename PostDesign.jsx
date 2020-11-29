@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, Text, Image } from "react-native";
+import { View, StyleSheet, Text, Image, Container } from "react-native";
 
 var mainColor = "#74c69d";
 var textColor = "#081c15";
@@ -67,10 +67,10 @@ const styles = StyleSheet.create({
   }
 });
 
-export default function PostDesign() {
+export default function PostDesign(props) {
   return (
     <View>
-      <div
+      <Container
         style={{
           borderWidth: 1,
           borderStyle: "solid",
@@ -151,8 +151,8 @@ export default function PostDesign() {
             </tc>
           </tr>
         </table>
-      </div>
-      <div
+      </Container>
+      <Container
         id="post2"
         style={{
           borderWidth: 1,
@@ -242,7 +242,7 @@ export default function PostDesign() {
             </tc>
           </tr>
         </table>
-      </div>
+      </Container>
     </View>
   );
 }
