@@ -9,6 +9,6 @@
 
 ---
 
-# Important Notes before starting
+# Important Notes before Starting
 1. This web-app works best in a browser
 2. Ensure your browser is in full screen in order for proper functionality
