@@ -125,10 +125,13 @@ const HomeScreen = ({ navigation, route }) => {
         style={{
           flex: 1,
           flexDirection: "row",
-          justifyContent: "center"
+          justifyContent: "center",
+          paddingTop: 10,
+          paddingLeft: 10,
+          paddingRight: 10
         }}
       >
-        <View style={{ flex: 1, padding: 5 }}>
+        <View style={{ flex: 1, paddingRight: 10 }}>
           <Button
             color={mainColor}
             title="My Profile"
@@ -137,17 +140,17 @@ const HomeScreen = ({ navigation, route }) => {
             }
           />
         </View>
-        <View style={{ flex: 1, padding: 5 }}>
+        <View style={{ flex: 1, paddingRight: 10 }}>
           <Button
             color={mainColor}
             title="Create Post"
             onPress={() => navigation.navigate("Create")}
           />
         </View>
-        <View style={{ flex: 1, padding: 5 }}>
+        <View style={{ flex: 1 }}>
           <Button
             color={mainColor}
-            title="Search"
+            title="Discover"
             onPress={() => navigation.navigate("Search")}
           />
         </View>
@@ -164,6 +167,25 @@ const ProfileScreen = ({ navigation, route }) => {
 const PostScreen = ({ navigation }) => {
   return (
     <Container>
+      <View
+        style={{
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center"
+        }}
+      >
+        <Text
+          style={{
+            color: mainColor,
+            padding: 1,
+            fontSize: 35,
+            fontFamily: "Avenir-Light"
+            // textAlign: "center"
+          }}
+        >
+          New Post
+        </Text>
+      </View>
       <Text>
         <PostForm />
       </Text>

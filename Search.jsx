@@ -1,37 +1,7 @@
 import React, { useState, useEffect } from "react";
-import SearchBar from "./SearchBar";
+import Suggest from "./Suggest";
 import { Text, View, StyleSheet, Image, Button } from "react-native";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-const searchList = [
-  "LGBTQ+",
-  "Native American",
-  "Person with a Disability",
-  "African American",
-  "Asian Pacific Islander",
-  "Latino/a/x Chicano/a/x",
-  "Josh Seaman"
-];
-
-// export default function Search(props) {
-//   const [searchInput, setSearchInput] = useState("");
-
-//   return (
-//     <View style={{ justifyContent: "center", flexDirection: "row", flex: 1 }}>
-//       <View style={{ flex: 1 }} />
-//       <View style={{ flex: 2, textAlign: "center" }}>
-//         <Text style={{ color: "#74c69d", fontSize: 20, margin: 20 }}>
-//           Search for Communities & Users
-//         </Text>
-//         <SearchBar input={input} onChange={updateInput} />
-//         <Button color={mainColor} title="Search" onPress={() => }/>
-//         <Text>{filteredCommunityList}</Text>
-//         <Text>{input}</Text>
-//       </View>
-//       <View style={{ flex: 1 }} />
-//     </View>
-//   );
-// }
 
 var mainColor = "#74c69d";
 var lightColor = "#D5EDE1";
@@ -92,15 +62,11 @@ const styles = StyleSheet.create({
 });
 
 const Search = props => {
-  const [input, setInput] = useState("");
-  const [filteredCommunityList, setCommunityList] = useState();
-
-  const updateInput = input => {
-    const filtered = communityList.filter(community => {
-      return community.name.toLowerCase().includes(input.toLowerCase());
-    });
-    setInput(input);
-    setCommunityList(filtered);
+  const BarStyling = {
+    width: "100%",
+    border: "none",
+    padding: "0.5rem",
+    borderRadius: 10
   };
 
   return (
@@ -129,17 +95,12 @@ const Search = props => {
               flexDirection: "row"
             }}
           >
-            <View style={{ flex: 5 }}>
-              <SearchBar
-                input={input}
-                // onChange={updateInput}
-              />
+            <View style={{ flex: 7 }}>
+              <Suggest />
             </View>
             <View style={{ flex: 1, paddingLeft: 5, paddingTop: 3 }}>
               <Button color="#74c69d" title="Search" />
             </View>
-            <Text>{filteredCommunityList}</Text>
-            <Text>{input}</Text>
           </View>
           <View style={{ flex: 1 }} />
         </View>
