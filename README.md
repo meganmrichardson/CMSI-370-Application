@@ -1,7 +1,7 @@
 # Gather
 ## A web-app created for CMSI-370 Fall 2020
 
-###Authors:
+### Authors:
 - Josh Seaman
 - Nick Morgan
 - Srikar Dabbara
