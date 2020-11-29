@@ -16,7 +16,7 @@ const SearchBar = ({ keyword, setKeyword }) => {
       value={keyword}
       placeholder={"Search for Communities & Users"}
       // this line below probs has issue related to async call that i removed
-      onChange={e => setKeyword(e.target.value)}
+      // onChange={e => setKeyword(e.target.value)}
     />
   );
 };

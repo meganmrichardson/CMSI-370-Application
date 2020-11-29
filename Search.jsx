@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SearchBar from "./SearchBar";
-import { Text, View, StyleSheet, Image } from "react-native";
+import { Text, View, StyleSheet, Image, Button } from "react-native";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const searchList = [
@@ -121,8 +121,23 @@ const Search = props => {
           }}
         >
           <View style={{ flex: 1 }} />
-          <View style={{ flex: 2, textAlign: "center" }}>
-            <SearchBar input={input} onChange={updateInput} />
+          <View
+            style={{
+              flex: 2,
+              textAlign: "center",
+              justifyContent: "center",
+              flexDirection: "row"
+            }}
+          >
+            <View style={{ flex: 5 }}>
+              <SearchBar
+                input={input}
+                // onChange={updateInput}
+              />
+            </View>
+            <View style={{ flex: 1, paddingLeft: 5, paddingTop: 3 }}>
+              <Button color="#74c69d" title="Search" />
+            </View>
             <Text>{filteredCommunityList}</Text>
             <Text>{input}</Text>
           </View>
