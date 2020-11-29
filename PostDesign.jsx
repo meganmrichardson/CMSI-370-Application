@@ -1,5 +1,6 @@
 import React from "react";
-import { View, StyleSheet, Text, Image, Container } from "react-native";
+import { View, StyleSheet, Text, Image } from "react-native";
+import { Container } from "react-bootstrap";
 
 var mainColor = "#74c69d";
 var textColor = "#081c15";
