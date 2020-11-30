@@ -1,3 +1,7 @@
+// Gather Application - Auto Suggestion for Search Bar
+// Authors:
+// Srikar Dabbara, Nick Morgan, Megan Richardson, Josh Seaman
+
 import Autosuggest from "react-autosuggest";
 import React from "react";
 import "./Suggest.css";
@@ -8,7 +12,7 @@ import "./Suggest.css";
 const suggestions = [
   { text: "LGBTQ+" },
   { text: "Native Americans" },
-  { text: "People Living with Disabilities" },
+  { text: "Living with Disabilities" },
   { text: "BIPOC" },
   { text: "Asian Pacific Islander" },
   { text: "¡Comunidad!" },
@@ -45,7 +49,7 @@ class Suggest extends React.Component {
     super();
 
     // must provide an input value
-    // suggestions msut be provided to the Autosuggest (intitally empty)
+    // suggestions must be given to the Autosuggest (intially empty)
     this.state = {
       value: "",
       suggestions: []

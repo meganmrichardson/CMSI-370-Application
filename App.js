@@ -1,4 +1,7 @@
-// import { StatusBar } from "expo-status-bar";
+// Gather Application - Main file / Home Page
+// Authors:
+// Srikar Dabbara, Nick Morgan, Megan Richardson, Josh Seaman
+
 import React, { useState } from "react";
 import {
   ScrollView,
@@ -27,22 +30,13 @@ var mainColor = "#74c69d";
 
 function App() {
   const ogPosts = [
-    // {
-    //   author: "Josh Seaman",
-    //   title: "Post 3",
-    //   profPic: "https://i.imgur.com/oywNGQ3.jpg",
-    //   community: "Trans Pride!"
-    //   date: "now",
-    //   postImg: "",
-    //   body:
-    //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
-    // },
     {
-      author: "Jane Doe",
+      author: "Johnny Appleseed",
       title: "Post 2",
       profPic:
         "https://www.tenforums.com/geek/gars/images/2/types/thumb__ser.png",
-      community: "BIPOC",
+      communityPic:
+        "https://i.ebayimg.com/images/g/5HoAAOSweRVe1nuY/s-l400.jpg",
       date: "3 days ago",
       postImg: "",
 
@@ -50,11 +44,12 @@ function App() {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud exercitation ullamco laborisnisi ut aliquip ex ea commodo consequat. Duis aute irure dolor inreprehenderit in voluptate velit esse cillum dolore eu fugiatnulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     {
-      author: "Johnny Appleseed",
+      author: "Jane Doe",
       title: "Post 1",
       profPic:
         "https://www.tenforums.com/geek/gars/images/2/types/thumb__ser.png",
-      community: "Trans Pride!",
+      communityPic:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Disability_symbols.svg/1024px-Disability_symbols.svg.png",
       date: "11/01/2020",
       postImg:
         "http://www.jennybeaumont.com/wp-content/uploads/2015/03/placeholder.gif",
@@ -167,7 +162,9 @@ const HomeScreen = ({ navigation, route }) => {
           <Button
             color={mainColor}
             title="Create Post"
-            onPress={() => navigation.navigate("Create")}
+            onPress={() =>
+              navigation.navigate("Create", { params: route.params })
+            }
           />
         </View>
         <View style={{ flex: 1 }}>
@@ -184,10 +181,26 @@ const HomeScreen = ({ navigation, route }) => {
 };
 
 const ProfileScreen = ({ navigation, route }) => {
-  return <PersonalProfile />;
+  return <PersonalProfile navigation={navigation} />;
 };
 
-const PostScreen = ({ navigation }) => {
+const PostScreen = ({ navigation, route }) => {
+  const handleSubmit = () => {
+    route.params["2"] = {
+      author: "Jane Doe",
+      title: "Post 3",
+      profPic: "https://i.imgur.com/oywNGQ3.jpg",
+      communityPic:
+        "https://whwest.org.au/wp-content/uploads/2018/12/rainbow_flag.png",
+      date: "now",
+      postImg: "",
+      body:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris"
+    };
+
+    navigation.navigate("Home");
+  };
+
   return (
     <Container>
       <View
@@ -203,18 +216,14 @@ const PostScreen = ({ navigation }) => {
         <PostForm />
       </Text>
       <View style={{ padding: 15 }}>
-        <Button
-          color="#74c69d"
-          title="Submit"
-          onPress={() => navigation.navigate("ToDo")}
-        />
+        <Button color="#74c69d" title="Submit" onPress={handleSubmit} />
       </View>
     </Container>
   );
 };
 
-const SearchScreen = ({ navigation }) => {
-  return <Search />;
+const SearchScreen = ({ navigation, route }) => {
+  return <Search navigation={navigation} />;
 };
 
 const TodoScreen = ({ navigation }) => {

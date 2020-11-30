@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from "react";
+// Gather Application - Search Explore
+// Authors:
+// Srikar Dabbara, Nick Morgan, Megan Richardson, Josh Seaman
+
+import React from "react";
 import Suggest from "./Suggest";
 import { Text, View, StyleSheet, Image, Button } from "react-native";
 import { Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useNavigation } from "@react-navigation/native";
-import NavigationService from "./App";
 
 var mainColor = "#74c69d";
-var lightColor = "#D5EDE1";
 var textColor = "#081c15";
 
 const styles = StyleSheet.create({
@@ -38,10 +39,11 @@ const styles = StyleSheet.create({
   },
   communities: {
     height: "100%",
-    padding: 5,
+    flexGrow: 4,
     flexDirection: "row",
     justifyContent: "center",
-    flexWrap: "wrap"
+    flexWrap: "wrap",
+    padding: 10
   },
   commTitle: {
     flexDirection: "column",
@@ -52,6 +54,7 @@ const styles = StyleSheet.create({
     borderColor: mainColor,
     borderWidth: 5,
     height: 200,
+    padding: 10,
     width: 200,
     borderRadius: 180,
     margin: 10,
@@ -104,7 +107,11 @@ const Search = props => {
                 <Suggest />
               </View>
               <View style={{ flex: 1, paddingLeft: 5, paddingTop: 3 }}>
-                <Button color="#74c69d" title="Search" />
+                <Button
+                  color="#74c69d"
+                  title="Search"
+                  onPress={() => props.navigation.navigate({ name: "ToDo" })}
+                />
               </View>
             </View>
             <View style={{ flex: 1 }} />
@@ -121,8 +128,14 @@ const Search = props => {
                   "http://organiceyourlife.com/wp-content/uploads/2012/06/rainbow-flag.jpg"
                 }
               />
-              <Text style={styles.communitiesT}> LGBTQ+ </Text>
-              <Text style={styles.communitiesSubT}> Apply | More Info </Text>
+              <Text style={styles.communitiesT}>LGBTQ+</Text>
+              <Text
+                style={styles.communitiesSubT}
+                onPress={() => props.navigation.navigate({ name: "ToDo" })}
+              >
+                {" "}
+                Apply | More Info{" "}
+              </Text>
             </View>
             <View style={styles.commTitle}>
               <Image
@@ -132,7 +145,13 @@ const Search = props => {
                 }
               />
               <Text style={styles.communitiesT}> BIPOC </Text>
-              <Text style={styles.communitiesSubT}> Apply | More Info </Text>
+              <Text
+                style={styles.communitiesSubT}
+                onPress={() => props.navigation.navigate({ name: "ToDo" })}
+              >
+                {" "}
+                Apply | More Info{" "}
+              </Text>
             </View>
             <View style={styles.commTitle}>
               <Image
@@ -143,9 +162,15 @@ const Search = props => {
               />
               <Text style={styles.communitiesT}>
                 {" "}
-                People Living with Disabilities{" "}
+                Living with Disabilities{" "}
               </Text>
-              <Text style={styles.communitiesSubT}> Apply | More Info </Text>
+              <Text
+                style={styles.communitiesSubT}
+                onPress={() => props.navigation.navigate({ name: "ToDo" })}
+              >
+                {" "}
+                Apply | More Info{" "}
+              </Text>
             </View>
             <View style={styles.commTitle}>
               <Image
@@ -153,7 +178,13 @@ const Search = props => {
                 source={"https://hrexach.files.wordpress.com/2015/09/hh4.jpg"}
               />
               <Text style={styles.communitiesT}> ¡Comunidad! </Text>
-              <Text style={styles.communitiesSubT}> Apply | More Info </Text>
+              <Text
+                style={styles.communitiesSubT}
+                onPress={() => props.navigation.navigate({ name: "ToDo" })}
+              >
+                {" "}
+                Apply | More Info{" "}
+              </Text>
             </View>
             <View style={styles.commTitle}>
               <Image
@@ -163,7 +194,13 @@ const Search = props => {
                 }
               />
               <Text style={styles.communitiesT}> Asian Pacific Islander </Text>
-              <Text style={styles.communitiesSubT}> Apply | More Info </Text>
+              <Text
+                style={styles.communitiesSubT}
+                onPress={() => props.navigation.navigate({ name: "ToDo" })}
+              >
+                {" "}
+                Apply | More Info{" "}
+              </Text>
             </View>
             <View style={styles.commTitle}>
               <Image
@@ -173,7 +210,13 @@ const Search = props => {
                 }
               />
               <Text style={styles.communitiesT}> Trans Pride!</Text>
-              <Text style={styles.communitiesSubT}> Apply | More Info </Text>
+              <Text
+                style={styles.communitiesSubT}
+                onPress={() => props.navigation.navigate({ name: "ToDo" })}
+              >
+                {" "}
+                Apply | More Info{" "}
+              </Text>
             </View>
             <View style={styles.commTitle}>
               <Image
@@ -183,7 +226,13 @@ const Search = props => {
                 }
               />
               <Text style={styles.communitiesT}> Native Americans</Text>
-              <Text style={styles.communitiesSubT}> Apply | More Info </Text>
+              <Text
+                style={styles.communitiesSubT}
+                onPress={() => props.navigation.navigate({ name: "ToDo" })}
+              >
+                {" "}
+                Apply | More Info{" "}
+              </Text>
             </View>
             <View style={styles.commTitle}>
               <Image
@@ -193,7 +242,13 @@ const Search = props => {
                 }
               />
               <Text style={styles.communitiesT}> Neurodivergents Unite</Text>
-              <Text style={styles.communitiesSubT}> Apply | More Info </Text>
+              <Text
+                style={styles.communitiesSubT}
+                onPress={() => props.navigation.navigate({ name: "ToDo" })}
+              >
+                {" "}
+                Apply | More Info{" "}
+              </Text>
             </View>
           </View>
         </View>

@@ -1,3 +1,8 @@
+// Gather Application - Profile Page for Non-Personal User
+// (((UNUSED)))
+// Authors:
+// Srikar Dabbara, Nick Morgan, Megan Richardson, Josh Seaman
+
 import React from "react";
 import {
   ScrollView,

@@ -1,3 +1,7 @@
+// Gather Application - My Profile Page
+// Authors:
+// Srikar Dabbara, Nick Morgan, Megan Richardson, Josh Seaman
+
 import React from "react";
 import {
   ScrollView,
@@ -83,26 +87,9 @@ const styles = StyleSheet.create({
   }
 });
 
-export default function PersonalProfile() {
+export default function PersonalProfile(props) {
   return (
     <Container>
-      {/* <NavigationContainer>
-            {
-              <Stack.Navigator>
-                <Stack.Screen
-                  name="Profile"
-                  component={ProfileScreen}
-                  options={{ title: "gather" }}
-                />
-                <Stack.Screen
-                  name="Todo"
-                  component={TodoScreen}
-                  options={{ title: "gather" }}
-                />
-              </Stack.Navigator>
-            }
-          </NavigationContainer> */}
-
       <View>
         <View style={styles.profileHeader}>
           <Image
@@ -145,12 +132,8 @@ export default function PersonalProfile() {
             <Button
               title="Manage Settings"
               color="#74c69d"
-              onPress={() =>
-                this.props.navigation.navigate({ routeName: "ToDo" })
-              }
-            >
-              Settings
-            </Button>
+              onPress={() => props.navigation.navigate({ name: "ToDo" })}
+            />
           </View>
         </View>
 
@@ -160,6 +143,6 @@ export default function PersonalProfile() {
   );
 }
 
-const TodoScreen = ({ navigation }) => {
-  return <ToDo />;
-};
+// const TodoScreen = ({ navigation }) => {
+//   return <ToDo />;
+// };

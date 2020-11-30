@@ -1,3 +1,7 @@
+// Gather Application - Formatting of the Posts
+// Authors:
+// Srikar Dabbara, Nick Morgan, Megan Richardson, Josh Seaman
+
 import React from "react";
 import { View, StyleSheet, Text, Image } from "react-native";
 import { Container, Card, Row, Col, Button } from "react-bootstrap";
@@ -30,12 +34,14 @@ const styles = StyleSheet.create({
     fontFamily: "Avenir-Light",
     color: textColor,
     fontSize: 20,
-    marginTop: 2
+    marginTop: 7,
+    marginLeft: -30
   }
 });
 
 export default function PostDesign(props) {
   const { posts } = props;
+  delete posts.currentUser;
   return (
     <Container
       style={{
@@ -53,27 +59,31 @@ export default function PostDesign(props) {
               <Container>
                 <Row>
                   <Col sm={1}>
-                    <Image src={posts[post].profPic} style={styles.profPic} />
+                    <View>
+                      <Image src={posts[post].profPic} style={styles.profPic} />
+                    </View>
                   </Col>
                   <Col sm={8}>
                     <Text style={styles.authorName}>{posts[post].author}</Text>
-                    <Text>{"             "}</Text>
-                    <Text style={styles.authorName}>
-                      {posts[post].community}
-                    </Text>
-                  </Col>
-                  <Col>
                     <Text
                       style={{
-                        float: "right",
+                        float: "left",
                         fontFamily: "Avenir-Light",
                         fontSize: 14,
                         color: mainColor,
-                        marginTop: 9
+                        marginTop: 12
                       }}
                     >
                       &nbsp;&nbsp;{posts[post].date}
                     </Text>
+                  </Col>
+                  <Col>
+                    <View>
+                      <Image
+                        src={posts[post].communityPic}
+                        style={styles.communityPic}
+                      />
+                    </View>
                   </Col>
                 </Row>
                 <hr></hr>

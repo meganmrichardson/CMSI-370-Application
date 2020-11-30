@@ -1,3 +1,7 @@
+// Gather Application - Forms for Creating a Post
+// Authors:
+// Srikar Dabbara, Nick Morgan, Megan Richardson, Josh Seaman
+
 import React, { useState, useRef } from "react";
 import {
   Container,
