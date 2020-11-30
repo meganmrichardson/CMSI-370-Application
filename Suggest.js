@@ -1,5 +1,6 @@
 import Autosuggest from "react-autosuggest";
 import React from "react";
+import "./Suggest.css";
 
 // add to readme!
 // npm install react-autosuggest --save
@@ -16,7 +17,9 @@ const suggestions = [
   { text: "Josh Seaman" },
   { text: "Megan Richardson" },
   { text: "Nick Morgan" },
-  { text: "Srikar Dabbara" }
+  { text: "Srikar Dabbara" },
+  { text: "Jane Doe" },
+  { text: "Johnny Appleseed" }
 ];
 
 // finds suggestions based on input value
@@ -34,33 +37,28 @@ const getSuggestions = value => {
 
 // changes the input value when suggestion is clicked
 const changeInputValue = suggestion => suggestion.text;
-
-// "use your imagination to render suggestions"
-const renderSuggestion = suggestion => <div>{suggestion.name}</div>;
+const renderSuggestion = suggestion => <div>{suggestion.text}</div>;
 
 class Suggest extends React.Component {
   constructor() {
     super();
 
-    // Autosuggest is a controlled component.
-    // This means that you need to provide an input value
-    // and an onChange handler that updates this value (see below).
-    // Suggestions also need to be provided to the Autosuggest,
-    // and they are initially empty because the Autosuggest is closed.
+    // must provide an input value
+    // suggestions msut be provided to the Autosuggest (intitally empty)
     this.state = {
       value: "",
       suggestions: []
     };
   }
 
+  // onChange updates the input value
   onChange = (event, { newValue }) => {
     this.setState({
       value: newValue
     });
   };
 
-  // Autosuggest will call this function every time you need to update suggestions.
-  // You already implemented this logic above, so just use it.
+  // Autosuggest calls this function to update suggestions
   onSuggestionsFetchRequested = ({ value }) => {
     this.setState({
       suggestions: getSuggestions(value)
@@ -77,20 +75,16 @@ class Suggest extends React.Component {
   render() {
     const { value, suggestions } = this.state;
 
-    // Autosuggest will pass through all these props to the input.
+    // Autosuggest will pass props to the input
     const inputProps = {
       placeholder: "Search for Communities & Users",
       value,
       onChange: this.onChange
     };
 
-    // render it
+    // render
     return (
       <Autosuggest
-        style={{
-          border: "none",
-          font: "Avenir"
-        }}
         suggestions={suggestions}
         onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
         onSuggestionsClearRequested={this.onSuggestionsClearRequested}

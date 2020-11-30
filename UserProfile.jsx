@@ -85,9 +85,11 @@ export default function UserProfile() {
         <View style={styles.profileHeader}>
           <Image
             style={styles.profPic}
-            source={"https://i.imgur.com/oywNGQ3.jpg"}
+            source={
+              "https://www.tenforums.com/geek/gars/images/2/types/thumb__ser.png"
+            }
           />
-          <Text style={styles.nameHeader}>Josh Seaman</Text>
+          <Text style={styles.nameHeader}>Jane Doe</Text>
           <Text style={styles.communitiesHeader}> Communities: 4 </Text>
         </View>
 
@@ -116,14 +118,7 @@ export default function UserProfile() {
               "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Transgender_Pride_flag.svg/1920px-Transgender_Pride_flag.svg.png"
             }
           />
-          <Image
-            style={styles.moreCommunities}
-            source={
-              "https://img.icons8.com/color/50/000000/connection-status-off--v1.png"
-            }
-          />
         </View>
-
         <Text style={styles.bio}> So excited to show everyone gather!</Text>
       </View>
     </Container>

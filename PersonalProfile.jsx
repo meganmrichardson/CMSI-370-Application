@@ -76,14 +76,6 @@ const styles = StyleSheet.create({
     padding: 5,
     flexDirection: "row",
     justifyContent: "center"
-  },
-  settingsCommunities: {
-    height: 35,
-    width: 35,
-    margin: 5,
-    borderRadius: 180,
-    float: "right",
-    overflow: "hidden"
   }
 });
 
@@ -95,10 +87,10 @@ export default function PersonalProfile() {
           <Image
             style={styles.profPic}
             source={
-              "http://www.laaae.org/wp-content/uploads/2013/09/empty_profile_picture.gif"
+              "https://www.tenforums.com/geek/gars/images/2/types/thumb__ser.png"
             }
           />
-          <Text style={styles.nameHeader}>Josh Seaman</Text>
+          <Text style={styles.nameHeader}>Jane Doe</Text>
           <Text style={styles.communitiesHeader}>Communities: 4</Text>
         </View>
         <View style={styles.communitiesIcons}>
@@ -126,19 +118,9 @@ export default function PersonalProfile() {
               "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Transgender_Pride_flag.svg/1920px-Transgender_Pride_flag.svg.png"
             }
           />
-          <Image
-            style={styles.settingsCommunities}
-            source={
-              "https://img.icons8.com/material/48/000000/settings--v2.png"
-            }
-          />
         </View>
         <View style={styles.settingsWrapper}>
-          <Button
-            title="Manage Settings"
-            color="#74c69d"
-            // style={{ backgroundColor: "#74c69d" }}
-          >
+          <Button title="Manage Settings" color="#74c69d">
             Settings
           </Button>
         </View>

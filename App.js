@@ -1,6 +1,13 @@
 // import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
-import { ScrollView, Text, Image, View, Button } from "react-native";
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  Image,
+  View,
+  Button
+} from "react-native";
 import { NavigationContainer, StackActions } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { Form, Container, Row, Col } from "react-bootstrap";
@@ -18,6 +25,44 @@ var mainColor = "#74c69d";
 // var textColor = "#081c15";
 
 function App() {
+  const ogPosts = [
+    // {
+    //   author: "Josh Seamen",
+    //   title: "Post 3",
+    //   profPic: "https://i.imgur.com/oywNGQ3.jpg",
+    //   community: "Trans Pride!"
+    //   date: "now",
+    //   postImg: "",
+    //   body:
+    //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
+    // },
+    {
+      author: "Jane Doe",
+      title: "Post 2",
+      profPic:
+        "https://www.tenforums.com/geek/gars/images/2/types/thumb__ser.png",
+      community: "BIPOC",
+      date: "3 days ago",
+      postImg: "",
+
+      body:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud exercitation ullamco laborisnisi ut aliquip ex ea commodo consequat. Duis aute irure dolor inreprehenderit in voluptate velit esse cillum dolore eu fugiatnulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+      author: "Johnny Appleseed",
+      title: "Post 1",
+      profPic:
+        "https://www.tenforums.com/geek/gars/images/2/types/thumb__ser.png",
+      community: "Trans Pride!",
+      date: "11/01/2020",
+      postImg:
+        "http://www.jennybeaumont.com/wp-content/uploads/2015/03/placeholder.gif",
+      body:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris"
+    }
+  ];
+  const [posts, setPosts] = useState(ogPosts);
+
   return (
     <NavigationContainer>
       {
@@ -31,6 +76,7 @@ function App() {
             name="Home"
             component={HomeScreen}
             options={{ title: "gather", headerLeft: "" }}
+            initialParams={posts}
           />
           <Stack.Screen
             name="Profile"
@@ -108,7 +154,9 @@ const LoginScreen = ({ navigation }) => {
           <Button
             color={mainColor}
             title="Login"
-            onPress={() => navigation.navigate("Home", { user: username })}
+            onPress={() =>
+              navigation.navigate("Home", { currentUser: username })
+            }
           />
         </View>
         <View style={{ flex: 1 }} />
@@ -136,7 +184,7 @@ const HomeScreen = ({ navigation, route }) => {
             color={mainColor}
             title="My Profile"
             onPress={() =>
-              navigation.navigate("Profile", { name: route.params.user })
+              navigation.navigate("Profile", { name: route.params.currentUser })
             }
           />
         </View>
@@ -155,7 +203,7 @@ const HomeScreen = ({ navigation, route }) => {
           />
         </View>
       </View>
-      <PostDesign />
+      <PostDesign posts={route.params} />
     </View>
   );
 };
@@ -205,7 +253,45 @@ const SearchScreen = ({ navigation }) => {
 };
 
 const TodoScreen = ({ navigation }) => {
-  return <Text>Not Implemented yet!</Text>;
+  return (
+    <View>
+      <View style={styles.TodoHeader}>
+        <br />
+        <br />
+        <Image
+          style={{ padding: 30 }}
+          source={"https://img.icons8.com/ios/80/000000/warning-shield.png"}
+        />
+        <Text style={styles.mainText}>Current Page in Proccess</Text>
+        <Text style={styles.subText}>Pardon our dust</Text>
+      </View>
+    </View>
+  );
 };
+
+var mainColor = "#74c69d";
+var textColor = "#081c15";
+const styles = StyleSheet.create({
+  TodoHeader: {
+    display: "flex",
+    flexDirection: "vertical",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "100%",
+    textAlign: "center"
+  },
+  mainText: {
+    color: mainColor,
+    padding: 1,
+    fontSize: 35,
+    fontFamily: "Avenir-Light"
+  },
+  subText: {
+    color: textColor,
+    padding: 1,
+    fontSize: 18,
+    fontFamily: "Avenir-Light"
+  }
+});
 
 export default App;
