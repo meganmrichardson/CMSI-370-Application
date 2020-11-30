@@ -16,6 +16,7 @@ import PersonalProfile from "./PersonalProfile";
 import PostForm from "./PostForm";
 import PostDesign from "./PostDesign";
 import Search from "./Search";
+import ToDo from "./ToDo";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { TextInput } from "react-native-gesture-handler";
 
@@ -27,7 +28,7 @@ var mainColor = "#74c69d";
 function App() {
   const ogPosts = [
     // {
-    //   author: "Josh Seamen",
+    //   author: "Josh Seaman",
     //   title: "Post 3",
     //   profPic: "https://i.imgur.com/oywNGQ3.jpg",
     //   community: "Trans Pride!"
@@ -94,7 +95,7 @@ function App() {
             options={{ title: "gather" }}
           />
           <Stack.Screen
-            name="Todo"
+            name="ToDo"
             component={TodoScreen}
             options={{ title: "gather" }}
           />
@@ -107,14 +108,7 @@ function App() {
 const LoginScreen = ({ navigation }) => {
   const [username, setUsername] = useState("Default User");
   return (
-    <View
-      style={{
-        justifyContent: "center",
-        flexDirection: "column",
-        flex: 1,
-        backgroundImage: "linear-gradient(80deg, #ffffff, #d7f5e6, #ffffff)"
-      }}
-    >
+    <View style={styles.loginBackground}>
       <View style={{ flex: 1 }} />
       <View style={{ justifyContent: "center", flexDirection: "row", flex: 1 }}>
         <View style={{ flex: 1 }} />
@@ -130,23 +124,13 @@ const LoginScreen = ({ navigation }) => {
             Welcome to gather!
           </Text>
           <TextInput
-            style={{
-              height: 60,
-              padding: 20,
-              marginBottom: 10,
-              backgroundColor: "white"
-            }}
+            style={styles.loginCredentialsFields}
             borderColor="gray"
             placeholder="Username"
             onChangeText={username => setUsername(username)}
           />
           <TextInput
-            style={{
-              height: 60,
-              padding: 20,
-              marginBottom: 10,
-              backgroundColor: "white"
-            }}
+            style={styles.loginCredentialsFields}
             borderColor="gray"
             placeholder="Password"
             secureTextEntry={true}
@@ -169,16 +153,7 @@ const LoginScreen = ({ navigation }) => {
 const HomeScreen = ({ navigation, route }) => {
   return (
     <View>
-      <View
-        style={{
-          flex: 1,
-          flexDirection: "row",
-          justifyContent: "center",
-          paddingTop: 10,
-          paddingLeft: 10,
-          paddingRight: 10
-        }}
-      >
+      <View style={styles.homeScreenStyle}>
         <View style={{ flex: 1, paddingRight: 10 }}>
           <Button
             color={mainColor}
@@ -222,17 +197,7 @@ const PostScreen = ({ navigation }) => {
           alignItems: "center"
         }}
       >
-        <Text
-          style={{
-            color: mainColor,
-            padding: 1,
-            fontSize: 35,
-            fontFamily: "Avenir-Light"
-            // textAlign: "center"
-          }}
-        >
-          New Post
-        </Text>
+        <Text style={styles.mainText}>New Post</Text>
       </View>
       <Text>
         <PostForm />
@@ -241,7 +206,7 @@ const PostScreen = ({ navigation }) => {
         <Button
           color="#74c69d"
           title="Submit"
-          onPress={() => navigation.navigate("Todo")}
+          onPress={() => navigation.navigate("ToDo")}
         />
       </View>
     </Container>
@@ -253,33 +218,12 @@ const SearchScreen = ({ navigation }) => {
 };
 
 const TodoScreen = ({ navigation }) => {
-  return (
-    <View>
-      <View style={styles.TodoHeader}>
-        <br />
-        <br />
-        <Image
-          style={{ padding: 30 }}
-          source={"https://img.icons8.com/ios/80/000000/warning-shield.png"}
-        />
-        <Text style={styles.mainText}>Current Page in Proccess</Text>
-        <Text style={styles.subText}>Pardon our dust</Text>
-      </View>
-    </View>
-  );
+  return <ToDo />;
 };
 
 var mainColor = "#74c69d";
 var textColor = "#081c15";
 const styles = StyleSheet.create({
-  TodoHeader: {
-    display: "flex",
-    flexDirection: "vertical",
-    justifyContent: "center",
-    alignItems: "center",
-    height: "100%",
-    textAlign: "center"
-  },
   mainText: {
     color: mainColor,
     padding: 1,
@@ -291,6 +235,26 @@ const styles = StyleSheet.create({
     padding: 1,
     fontSize: 18,
     fontFamily: "Avenir-Light"
+  },
+  loginBackground: {
+    justifyContent: "center",
+    flexDirection: "column",
+    flex: 1,
+    backgroundImage: "linear-gradient(80deg, #ffffff, #d7f5e6, #ffffff)"
+  },
+  loginCredentialsFields: {
+    height: 60,
+    padding: 20,
+    marginBottom: 10,
+    backgroundColor: "white"
+  },
+  homeScreenStyle: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "center",
+    paddingTop: 10,
+    paddingLeft: 10,
+    paddingRight: 10
   }
 });
 

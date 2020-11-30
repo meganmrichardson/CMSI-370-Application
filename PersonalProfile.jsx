@@ -8,6 +8,10 @@ import {
   Button
 } from "react-native";
 import { Container } from "react-bootstrap";
+import PostDesign from "./PostDesign";
+import ToDo from "./ToDo";
+
+// const Stack = createStackNavigator();
 
 var mainColor = "#74c69d";
 var textColor = "#081c15";
@@ -82,6 +86,23 @@ const styles = StyleSheet.create({
 export default function PersonalProfile() {
   return (
     <Container>
+      {/* <NavigationContainer>
+            {
+              <Stack.Navigator>
+                <Stack.Screen
+                  name="Profile"
+                  component={ProfileScreen}
+                  options={{ title: "gather" }}
+                />
+                <Stack.Screen
+                  name="Todo"
+                  component={TodoScreen}
+                  options={{ title: "gather" }}
+                />
+              </Stack.Navigator>
+            }
+          </NavigationContainer> */}
+
       <View>
         <View style={styles.profileHeader}>
           <Image
@@ -120,9 +141,17 @@ export default function PersonalProfile() {
           />
         </View>
         <View style={styles.settingsWrapper}>
-          <Button title="Manage Settings" color="#74c69d">
-            Settings
-          </Button>
+          <View style={{ width: "170px" }}>
+            <Button
+              title="Manage Settings"
+              color="#74c69d"
+              onPress={() =>
+                this.props.navigation.navigate({ routeName: "ToDo" })
+              }
+            >
+              Settings
+            </Button>
+          </View>
         </View>
 
         <Text style={styles.bio}> So excited to show everyone gather!</Text>
@@ -130,3 +159,7 @@ export default function PersonalProfile() {
     </Container>
   );
 }
+
+const TodoScreen = ({ navigation }) => {
+  return <ToDo />;
+};

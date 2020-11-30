@@ -19,7 +19,8 @@ const suggestions = [
   { text: "Nick Morgan" },
   { text: "Srikar Dabbara" },
   { text: "Jane Doe" },
-  { text: "Johnny Appleseed" }
+  { text: "Johnny Appleseed" },
+  { text: "John Doe" }
 ];
 
 // finds suggestions based on input value
