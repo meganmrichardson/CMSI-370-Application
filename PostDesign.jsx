@@ -1,6 +1,11 @@
 // Gather Application - Formatting of the Posts
 // Authors:
 // Srikar Dabbara, Nick Morgan, Megan Richardson, Josh Seaman
+// ------------------
+// !!Work Breakdown!!
+// Bootstrap Table Creation: Josh Seamen & Nick Morgan
+// Overall Styling: Josh Seamen
+// Implementation: Nick Morgan
 
 import React from "react";
 import { View, StyleSheet, Text, Image } from "react-native";

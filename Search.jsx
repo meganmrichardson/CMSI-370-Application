@@ -1,6 +1,10 @@
 // Gather Application - Search Explore
 // Authors:
 // Srikar Dabbara, Nick Morgan, Megan Richardson, Josh Seaman
+// !!Work Breakdown!!
+// Main Copy: Srikar Dabbara
+// Overall Styling: Srikar Dabbara
+// Search Bar Import: Megan Richardson
 
 import React from "react";
 import Suggest from "./Suggest";

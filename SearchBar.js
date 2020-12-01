@@ -1,3 +1,9 @@
+// Gather Application - Search Explore
+// Authors:
+// Srikar Dabbara, Nick Morgan, Megan Richardson, Josh Seaman
+// !!Work Breakdown!!
+// Creator: Megan Richardson
+
 import React from "react";
 
 const SearchBar = ({ keyword, setKeyword }) => {
@@ -9,14 +15,7 @@ const SearchBar = ({ keyword, setKeyword }) => {
   };
 
   return (
-    <input
-      style={BarStyling}
-      // key="random1"
-      // value={keyword}
-      placeholder={"Search for Communities & Users"}
-      // this line below probs has issue related to async call that i removed
-      // onChange={e => setKeyword(e.target.value)}
-    />
+    <input style={BarStyling} placeholder={"Search for Communities & Users"} />
   );
 };
 

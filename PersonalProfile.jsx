@@ -1,6 +1,11 @@
 // Gather Application - My Profile Page
 // Authors:
 // Srikar Dabbara, Nick Morgan, Megan Richardson, Josh Seaman
+// ------------------
+// !!Work Breakdown!!
+// Main Copy: Josh Seaman
+// Overall Styling: Josh Seaman, Srikar Dabbara
+// Post Design/Implementation: Nick Morgan
 
 import React, { useState } from "react";
 import {

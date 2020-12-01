@@ -1,6 +1,11 @@
 // Gather Application - Auto Suggestion for Search Bar
 // Authors:
 // Srikar Dabbara, Nick Morgan, Megan Richardson, Josh Seaman
+// !!Work Breakdown!!
+// Main Copy: Srikar Dabbara
+// Overall Styling: Megan Richardson
+// Data Structures: Megan Richardson
+// Code implemented from here: https://www.npmjs.com/package/react-autosuggest
 
 import Autosuggest from "react-autosuggest";
 import React from "react";

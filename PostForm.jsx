@@ -1,21 +1,14 @@
 // Gather Application - Forms for Creating a Post
 // Authors:
 // Srikar Dabbara, Nick Morgan, Megan Richardson, Josh Seaman
+// !!Work Breakdown!!
+// Main Copy: Josh Seamen
+// Overall Styling: Srikar Dabbara
+// Implementation: Nick Morgan
+// Drop Down Menu: Megan Richardson
 
-import React, { useState, useRef } from "react";
-import {
-  Container,
-  Form,
-  Button,
-  Card,
-  Dropdown,
-  DropdownButton,
-  MenuItem
-} from "react-bootstrap";
-import { ScrollView } from "react-native";
-
-var mainColor = "#74c69d";
-var secondaryColor = "#52a184";
+import React, { useState } from "react";
+import { Container, Form, Dropdown } from "react-bootstrap";
 
 export default function PostForm(props) {
   const [title, setTitle] = useState("");

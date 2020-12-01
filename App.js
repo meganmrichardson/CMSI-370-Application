@@ -1,19 +1,20 @@
 // Gather Application - Main file / Home Page
 // Authors:
 // Srikar Dabbara, Nick Morgan, Megan Richardson, Josh Seaman
+// ------------------
+// !!Work Breakdown!!
+// Navigation Stacks: Megan Richardson
+// Login Screen Styling: Megan Richardson, Josh Seamen
+// Home Screen Styling: Josh Seamen, Megan Richardson
+// Post Design/Implementation: Nick Morgan
+// Home Page Copy: Srikar Dabbara
+// Other Styling: All
 
 import React, { useState } from "react";
-import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  Image,
-  View,
-  Button
-} from "react-native";
+import { StyleSheet, Text, Image, View, Button } from "react-native";
 import { NavigationContainer, StackActions } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { Form, Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import PersonalProfile from "./PersonalProfile";
 import PostForm from "./PostForm";
 import PostDesign from "./PostDesign";

@@ -1,6 +1,10 @@
 // Gather Application - Incomplete Page
 // Authors:
 // Srikar Dabbara, Nick Morgan, Megan Richardson, Josh Seaman
+// !!Work Breakdown!!
+// Main Copy: Josh Seaman
+// Overall Styling: Josh Seaman
+// Implementation: Nick Morgan
 
 import React from "react";
 import { StyleSheet, Text, Image, View } from "react-native";

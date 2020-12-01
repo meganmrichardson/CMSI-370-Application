@@ -1,12 +1,19 @@
+// Gather Application - Community List Storage
+// Authors:
+// Srikar Dabbara, Nick Morgan, Megan Richardson, Josh Seaman
+// ------------------
+// !!Work Breakdown!!
+// Created by: Srikar Dabbara
+
 import React from "react";
 
 const communityList = [
   "LGBTQ+",
   "Native American",
-  "Person with a Disability",
-  "African American",
-  "Asian American",
-  "Hispanic"
+  "Living with Disabilities",
+  "BIPOC",
+  "Asian Pacific Islander",
+  "Comunidad!"
 ];
 
 const CommunityList = ({ communityList = [] }) => {
