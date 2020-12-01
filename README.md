@@ -1,4 +1,5 @@
 # Gather
+https://gatherweb.vercel.app/
 
 ## A web-app created for CMSI-370 Fall 2020
 
@@ -17,18 +18,13 @@ _Work allocation is commented at the top of each file because all of the commits
 
 1. This web-app works best in a browser
 2. Ensure your browser is in full screen in order for proper functionality
-3. Clone this repo and navigate into it in your termianl
-4. Install all the modules listed below
-5. Open "expo start"
-6. Click "Run in web browser" to view our application
-
-_Make sure base bootstrap.min.css is installed_
 
 ---
 
 # Node Modules Used in this Project:
 
 Use "npm install |option|" to install any necessary module
+_Make sure base bootstrap.min.css is installed_
 
 1. react
 2. react-native
