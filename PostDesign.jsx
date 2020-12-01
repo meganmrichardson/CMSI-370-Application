@@ -24,9 +24,8 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     height: 35,
     width: 35,
-    margin: 5,
+    marginTop: 5,
     borderRadius: 180,
-    float: "right",
     overflow: "hidden"
   },
   authorName: {
@@ -35,7 +34,14 @@ const styles = StyleSheet.create({
     color: textColor,
     fontSize: 20,
     marginTop: 7,
-    marginLeft: -30
+    marginLeft: -15
+  },
+  dateStyling: {
+    float: "left",
+    fontFamily: "Avenir-Light",
+    fontSize: 14,
+    color: mainColor,
+    marginTop: 12
   }
 });
 
@@ -46,7 +52,8 @@ export default function PostDesign(props) {
     <Container
       style={{
         marginTop: 20,
-        marginBottom: 20
+        marginBottom: 20,
+        width: "80%"
       }}
     >
       {posts &&
@@ -60,27 +67,23 @@ export default function PostDesign(props) {
                 <Row>
                   <Col sm={1}>
                     <View>
-                      <Image src={posts[post].profPic} style={styles.profPic} />
+                      {/* posts[post].profPic */}
+                      <Image
+                        source={posts[post].profPic}
+                        style={styles.profPic}
+                      />
                     </View>
                   </Col>
                   <Col sm={8}>
                     <Text style={styles.authorName}>{posts[post].author}</Text>
-                    <Text
-                      style={{
-                        float: "left",
-                        fontFamily: "Avenir-Light",
-                        fontSize: 14,
-                        color: mainColor,
-                        marginTop: 12
-                      }}
-                    >
+                    <Text style={styles.dateStyling}>
                       &nbsp;&nbsp;{posts[post].date}
                     </Text>
                   </Col>
                   <Col>
-                    <View>
+                    <View style={{ float: "right" }}>
                       <Image
-                        src={posts[post].communityPic}
+                        source={posts[post].communityPic}
                         style={styles.communityPic}
                       />
                     </View>
@@ -96,12 +99,3 @@ export default function PostDesign(props) {
     </Container>
   );
 }
-
-// { text: "LGBTQ+" },
-// { text: "Native Americans" },
-// { text: "People Living with Disabilities" },
-// { text: "BIPOC" },
-// { text: "Asian Pacific Islander" },
-// { text: "¡Comunidad!" },
-// { text: "Trans Pride!" },
-// { text: "Neurodivergents Unite" },
