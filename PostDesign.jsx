@@ -33,8 +33,7 @@ const styles = StyleSheet.create({
     fontFamily: "Avenir-Light",
     color: textColor,
     fontSize: 20,
-    marginTop: 7,
-    marginLeft: -15
+    marginTop: 7
   },
   dateStyling: {
     float: "left",
@@ -57,45 +56,44 @@ export default function PostDesign(props) {
       }}
     >
       {posts &&
-        Object.keys(posts).map(post => (
-          <Card
-            borderColor="succes"
-            style={{ marginTop: 10, marginBottom: 10 }}
-          >
-            <Card.Body>
-              <Container>
-                <Row>
-                  <Col sm={1}>
-                    <View>
-                      {/* posts[post].profPic */}
+        Object.keys(posts)
+          .reverse()
+          .map(post => (
+            <Card
+              borderColor="succes"
+              style={{ marginTop: 10, marginBottom: 10 }}
+            >
+              <Card.Body>
+                <Container>
+                  <Row>
+                    <Col style={{ flex: 4 }}>
                       <Image
                         source={posts[post].profPic}
                         style={styles.profPic}
                       />
-                    </View>
-                  </Col>
-                  <Col sm={8}>
-                    <Text style={styles.authorName}>{posts[post].author}</Text>
-                    <Text style={styles.dateStyling}>
-                      &nbsp;&nbsp;{posts[post].date}
-                    </Text>
-                  </Col>
-                  <Col>
-                    <View style={{ float: "right" }}>
-                      <Image
-                        source={posts[post].communityPic}
-                        style={styles.communityPic}
-                      />
-                    </View>
-                  </Col>
-                </Row>
-                <hr></hr>
-                <Card.Title>{posts[post].title}</Card.Title>
-                <Card.Text>{posts[post].body}</Card.Text>
-              </Container>
-            </Card.Body>
-          </Card>
-        ))}
+                      <Text style={styles.authorName}>
+                        {posts[post].author}
+                      </Text>
+                      <Text style={styles.dateStyling}>
+                        &nbsp;&nbsp;{posts[post].date}
+                      </Text>
+                    </Col>
+                    <Col style={{ flex: 1 }}>
+                      <View style={{ float: "right" }}>
+                        <Image
+                          source={posts[post].communityPic}
+                          style={styles.communityPic}
+                        />
+                      </View>
+                    </Col>
+                  </Row>
+                  <hr></hr>
+                  <Card.Title>{posts[post].title}</Card.Title>
+                  <Card.Text>{posts[post].body}</Card.Text>
+                </Container>
+              </Card.Body>
+            </Card>
+          ))}
     </Container>
   );
 }

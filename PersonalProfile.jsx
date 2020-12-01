@@ -88,36 +88,35 @@ const styles = StyleSheet.create({
 });
 
 export default function PersonalProfile(props) {
-  // const ogPosts = [
-  //   {
-  //     author: "Johnny Appleseed",
-  //     title: "Post 2",
-  //     profPic:
-  //       "https://www.tenforums.com/geek/gars/images/2/types/thumb__ser.png",
-  //     communityPic:
-  //       "https://i.ebayimg.com/images/g/5HoAAOSweRVe1nuY/s-l400.jpg",
-  //     date: "3 days ago",
-  //     postImg: "",
+  console.log(props);
+  const posts = [
+    {
+      author: props.name,
+      title: "Post 2",
+      profPic:
+        "https://www.tenforums.com/geek/gars/images/2/types/thumb__ser.png",
+      communityPic:
+        "https://i.ebayimg.com/images/g/5HoAAOSweRVe1nuY/s-l400.jpg",
+      date: "09/02/2020",
+      postImg: "",
 
-  //     body:
-  //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud exercitation ullamco laborisnisi ut aliquip ex ea commodo consequat. Duis aute irure dolor inreprehenderit in voluptate velit esse cillum dolore eu fugiatnulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  //   },
-  //   {
-  //     author: "Jane Doe",
-  //     title: "Post 1",
-  //     profPic:
-  //       "https://www.tenforums.com/geek/gars/images/2/types/thumb__ser.png",
-  //     communityPic:
-  //       "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Disability_symbols.svg/1024px-Disability_symbols.svg.png",
-  //     date: "11/01/2020",
-  //     postImg:
-  //       "http://www.jennybeaumont.com/wp-content/uploads/2015/03/placeholder.gif",
-  //     body:
-  //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris"
-  //   }
-  // ];
-
-  // const [posts, setPosts] = useState(ogPosts);
+      body:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud exercitation ullamco laborisnisi ut aliquip ex ea commodo consequat. Duis aute irure dolor inreprehenderit in voluptate velit esse cillum dolore eu fugiatnulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+      author: props.name,
+      title: "Post 1",
+      profPic:
+        "https://www.tenforums.com/geek/gars/images/2/types/thumb__ser.png",
+      communityPic:
+        "https://i.ebayimg.com/images/g/5HoAAOSweRVe1nuY/s-l400.jpg",
+      date: "3 days ago",
+      postImg:
+        "http://www.jennybeaumont.com/wp-content/uploads/2015/03/placeholder.gif",
+      body:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris"
+    }
+  ];
 
   return (
     <Container>
@@ -129,7 +128,7 @@ export default function PersonalProfile(props) {
               "https://www.tenforums.com/geek/gars/images/2/types/thumb__ser.png"
             }
           />
-          <Text style={styles.nameHeader}>Jane Doe</Text>
+          <Text style={styles.nameHeader}>{props.name}</Text>
           <Text style={styles.communitiesHeader}>Communities: 4</Text>
         </View>
         <View style={styles.communitiesIcons}>
@@ -170,12 +169,8 @@ export default function PersonalProfile(props) {
 
         <Text style={styles.bio}> So excited to show everyone gather!</Text>
 
-        {/* <PostDesign posts={route.params} /> */}
+        <PostDesign posts={posts} />
       </View>
     </Container>
   );
 }
-
-// const TodoScreen = ({ navigation }) => {
-//   return <ToDo />;
-// };
