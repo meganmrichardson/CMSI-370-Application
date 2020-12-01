@@ -2,7 +2,7 @@
 // Authors:
 // Srikar Dabbara, Nick Morgan, Megan Richardson, Josh Seaman
 
-import React from "react";
+import React, { useState } from "react";
 import {
   ScrollView,
   StyleSheet,
@@ -88,6 +88,37 @@ const styles = StyleSheet.create({
 });
 
 export default function PersonalProfile(props) {
+  // const ogPosts = [
+  //   {
+  //     author: "Johnny Appleseed",
+  //     title: "Post 2",
+  //     profPic:
+  //       "https://www.tenforums.com/geek/gars/images/2/types/thumb__ser.png",
+  //     communityPic:
+  //       "https://i.ebayimg.com/images/g/5HoAAOSweRVe1nuY/s-l400.jpg",
+  //     date: "3 days ago",
+  //     postImg: "",
+
+  //     body:
+  //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud exercitation ullamco laborisnisi ut aliquip ex ea commodo consequat. Duis aute irure dolor inreprehenderit in voluptate velit esse cillum dolore eu fugiatnulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  //   },
+  //   {
+  //     author: "Jane Doe",
+  //     title: "Post 1",
+  //     profPic:
+  //       "https://www.tenforums.com/geek/gars/images/2/types/thumb__ser.png",
+  //     communityPic:
+  //       "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Disability_symbols.svg/1024px-Disability_symbols.svg.png",
+  //     date: "11/01/2020",
+  //     postImg:
+  //       "http://www.jennybeaumont.com/wp-content/uploads/2015/03/placeholder.gif",
+  //     body:
+  //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris"
+  //   }
+  // ];
+
+  // const [posts, setPosts] = useState(ogPosts);
+
   return (
     <Container>
       <View>
@@ -138,6 +169,8 @@ export default function PersonalProfile(props) {
         </View>
 
         <Text style={styles.bio}> So excited to show everyone gather!</Text>
+
+        {/* <PostDesign posts={route.params} /> */}
       </View>
     </Container>
   );

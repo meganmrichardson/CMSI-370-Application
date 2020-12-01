@@ -6,7 +6,6 @@ import React from "react";
 import Suggest from "./Suggest";
 import { Text, View, StyleSheet, Image, Button } from "react-native";
 import { Container } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 var mainColor = "#74c69d";
 var textColor = "#081c15";

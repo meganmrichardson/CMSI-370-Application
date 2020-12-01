@@ -21,6 +21,7 @@ import PostDesign from "./PostDesign";
 import Search from "./Search";
 import ToDo from "./ToDo";
 import "bootstrap/dist/css/bootstrap.min.css";
+// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { TextInput } from "react-native-gesture-handler";
 
 const Stack = createStackNavigator();
